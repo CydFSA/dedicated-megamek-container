@@ -10,8 +10,8 @@ ENV MEGAMEK_HOME /megamek
 
 ARG user=megamek
 ARG group=megamek
-ARG uid=1000
-ARG gid=1000
+ARG uid=99
+ARG gid=100
 
 RUN groupadd -g ${gid} ${group} \
     && useradd -d "$MEGAMEK_HOME" -u ${uid} -g ${gid} -m -s /bin/bash ${user}
