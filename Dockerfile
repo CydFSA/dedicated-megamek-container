@@ -17,7 +17,7 @@ ARG gid=100
 # RUN groupadd -g ${gid} ${group} \
 #    && useradd -d "$MEGAMEK_HOME" -u ${uid} -g ${gid} -m -s /bin/bash ${user}
 
-RUN adduser -d "$MEGAMEK_HOME" -u ${uid} -g ${gid} -m -s /bin/bash ${user}
+RUN adduser --home-dir "$MEGAMEK_HOME" -u ${uid} -g ${gid} -m -s /bin/bash ${user}
 
 RUN wget -qO- https://github.com/seem8/astech/archive/refs/heads/master.zip \
   | tar -xzf - -C /megamek
