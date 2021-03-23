@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     python3.8 \
     python-is-python3 \
     python3-pip \
-    openjdk8-jre \
+    openjdk-8-jre-headless \
     nano
 
 # prepare home, user for megamek
