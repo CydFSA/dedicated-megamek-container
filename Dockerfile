@@ -20,8 +20,7 @@ ARG gid=100
 
 RUN useradd -d "$MEGAMEK_HOME" -u ${uid} -g ${gid} -m -s /bin/bash ${user}
 
-RUN wget -qO- https://github.com/seem8/astech/archive/refs/heads/master.zip \
-  | tar -xzf - -C /megamek
+RUN wget -q https://github.com/seem8/astech/archive/refs/heads/master.zip && unzip master.zip -d /megamek
 
 RUN wget -qO- https://github.com/MegaMek/megamek/releases/download/v0.46.1/megamek-0.48.0.tar.gz \
   | tar -xzf - --strip-components=1 -C /megamek
@@ -32,7 +31,6 @@ WORKDIR /megamek
 EXPOSE 2346
 EXPOSE 8080
 
-# make sure host keys are regenerated before sshd starts
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
