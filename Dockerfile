@@ -3,7 +3,7 @@ FROM openjdk:8-jdk
 LABEL version="0.48.0"
 
 # Install some bits
-RUN apt-get update && apt-get install -y wget tar python3.6 && apt-get clean all
+RUN apt-get update && apt-get install --no-install-recommends -y wget tar python3.6 && apt-get clean all
 
 # prepare home, user for megamek
 ENV MEGAMEK_HOME /megamek
