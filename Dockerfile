@@ -23,7 +23,7 @@ RUN useradd -d "$MEGAMEK_HOME" -u ${uid} -g ${gid} -m -s /bin/bash ${user}
 
 RUN wget -q https://github.com/seem8/astech/archive/refs/heads/master.zip && unzip master.zip -d /megamek
 
-RUN wget -qO- https://github.com/MegaMek/megamek/releases/download/v0.46.1/megamek-0.48.0.tar.gz \
+RUN wget -qO- https://github.com/MegaMek/megamek/releases/download/v0.48.0/megamek-0.48.0.tar.gz \
   | tar -xzf - --strip-components=1 -C /megamek
 
 WORKDIR /megamek
