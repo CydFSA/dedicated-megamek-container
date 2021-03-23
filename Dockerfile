@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     python3-pip \
     openjdk-8-jre-headless \
     wget \
+	unzip \
 	nano
 
 # prepare home, user for megamek
