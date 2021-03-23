@@ -5,7 +5,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     python-is-python3 \
     python3-pip \
     openjdk-8-jre-headless \
-    nano
+    wget \
+	nano
 
 # prepare home, user for megamek
 ENV MEGAMEK_HOME /megamek
